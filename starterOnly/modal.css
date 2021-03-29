@@ -10,6 +10,13 @@
 }
 /* Landing Page */
 
+/* ADDED CODE */
+.header-logo img {
+  width: auto;
+  height: auto;
+}
+/* ADDED CODE */
+
 body {
   margin: 0;
   display: flex;
@@ -35,10 +42,10 @@ img {
   margin: 3.5%;
 }
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -69,7 +76,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -77,7 +86,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -90,16 +101,18 @@ img {
   }
 }
 
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
   }
-} 
+}
+
+/* Modal */
 
 main {
   font-size: 130%;
@@ -111,9 +124,33 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
+
+/*Code ajouté*/
+.required {
+  color: red;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+}
+
+/*
+Doit être fait via JS :
+
+.formData input:invalid,
+input:invalid .formData .checkbox-label .checkbox-icon {
+  border: 2px solid red;
+}
+
+.formData input:valid,
+input:valid .formData .checkbox-label .checkbox-icon {
+  border: 1px solid green;
+}
+*/
+
+/*Fin du code ajouté*/
 
 .modal-btn {
   font-size: 145%;
@@ -226,6 +263,7 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -526,4 +564,3 @@ footer {
     opacity: 1;
   }
 }
-
