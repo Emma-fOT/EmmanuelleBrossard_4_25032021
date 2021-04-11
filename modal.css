@@ -126,7 +126,7 @@ main {
   text-align: justify;
 }
 
-/*Code ajouté*/
+/*ADDED CODE*/
 .required {
   color: red;
 }
@@ -135,22 +135,7 @@ main {
   color: red;
   font-size: 0.8rem;
 }
-
-/*
-Doit être fait via JS :
-
-.formData input:invalid,
-input:invalid .formData .checkbox-label .checkbox-icon {
-  border: 2px solid red;
-}
-
-.formData input:valid,
-input:valid .formData .checkbox-label .checkbox-icon {
-  border: 1px solid green;
-}
-*/
-
-/*Fin du code ajouté*/
+/*ADDED CODE*/
 
 .modal-btn {
   font-size: 145%;
@@ -194,7 +179,9 @@ input:valid .formData .checkbox-label .checkbox-icon {
   font-size: 16px;
 }
 
-.bground {
+/*ADDED CODE*/
+.bground,
+.bground2 {
   display: none;
   position: fixed;
   z-index: 1;
@@ -220,10 +207,23 @@ input:valid .formData .checkbox-label .checkbox-icon {
   padding-top: 10px;
 }
 
+/*ADDED CODE*/
+.content2 {
+  height: 760px;
+  padding-top: 250px;
+}
+/*ADDED CODE*/
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
 }
+
+/*ADDED CODE*/
+.modal-body2 {
+  text-align: center;
+}
+/*ADDED CODE*/
 
 label {
   font-family: var(--font-default);
