@@ -7,8 +7,6 @@ function editNav() {
   }
 }
 
-
-
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalbg2 = document.querySelector(".bground2");
@@ -16,11 +14,13 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const modalCloseBtn = document.querySelectorAll(".close");
 const formData = document.querySelectorAll(".formData");
 
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
+  window.scrollTo(0,0);
   modalbg.style.display = "block";
 }
 
@@ -41,11 +41,11 @@ function validate(event){
   event.preventDefault();
 
   //DOM elements
-  var first = document.forms["reserve"]["first"].value;               
-  var last = document.forms["reserve"]["last"].value;
-  var email = document.forms["reserve"]["email"].value;
-  var birthdate = document.forms["reserve"]["birthdate"].value;   
-  var quantity = document.forms["reserve"]["quantity"].value;
+  var first = document.forms["reserve"]["first"];               
+  var last = document.forms["reserve"]["last"];
+  var email = document.forms["reserve"]["email"];
+  var birthdate = document.forms["reserve"]["birthdate"];   
+  var quantity = document.forms["reserve"]["quantity"];
   var cities = document.querySelectorAll('input[type="radio"]');
   var acceptedPolicy = document.forms["reserve"]["checkbox1"];
   var problem = 0; 
@@ -53,38 +53,48 @@ function validate(event){
   const email_regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   //Validation of the firstname
-  if (first.trim().length<2){
+  if (first.value.trim().length<2){
     problem = errorMessage("errorFirst", "Veuillez entrer 2 caractères ou plus pour le champ du prénom.", problem);
+    first.style.borderColor = 'red';
   }else{
       document.getElementById("errorFirst").innerHTML="";  
+      first.style.borderColor = 'transparent';
   }
 
   //Validation of the lastname
-  if (last.trim().length<2){
+  if (last.value.trim().length<2){
     problem = errorMessage("errorLast", "Veuillez entrer 2 caractères ou plus pour le champ du nom.", problem);
+    last.style.borderColor = 'red';
   }else{
       document.getElementById("errorLast").innerHTML="";  
+      last.style.borderColor = 'transparent';
   }
     
   //Validation of the email address
-  if (!email_regex.test(email.trim())){ 
+  if (!email_regex.test(email.value.trim())){ 
     problem = errorMessage("errorEmail", "Veuillez entrez une adresse mail valide", problem);
+    email.style.borderColor = 'red';
   }else{
       document.getElementById("errorEmail").innerHTML="";  
+      email.style.borderColor = 'transparent';
   }
 
   //Validation of the birthdate
-  if ((birthdate === "") || (+birthdate.slice(0,4) < today.getFullYear() - 100) || (+birthdate.slice(0,4) > today.getFullYear() - 10)){ 
+  if ((birthdate.value === "") || (+birthdate.value.slice(0,4) < today.getFullYear() - 100) || (+birthdate.value.slice(0,4) > today.getFullYear() - 10)){ 
     problem = errorMessage("errorBirthdate", "Vous devez entrer votre date de naissance.", problem);
+    birthdate.style.borderColor = 'red';
   }else{
       document.getElementById("errorBirthdate").innerHTML="";  
+      birthdate.style.borderColor = 'transparent';
   }
 
   //Validation of the number of previous participations
-  if ((quantity.trim() === "") || (+quantity.trim()>99) || (+quantity.trim()<0)){ 
+  if ((quantity.value.trim() === "") || (+quantity.value.trim()>99) || (+quantity.value.trim()<0)){ 
     problem = errorMessage("errorQuantity", "Veuillez entrer un nombre entre 0 et 99 pour ce champ.", problem);
+    quantity.style.borderColor = 'red';
   }else{
       document.getElementById("errorQuantity").innerHTML="";  
+      quantity.style.borderColor = 'transparent';
   }
 
   //Validation of the city
@@ -125,7 +135,7 @@ function validate(event){
 
 //Write an error message when the field is not correctly filled (this function is called in the Validate() function)
 function errorMessage (element, message, errorCounter){
-  document.getElementById(element).innerHTML=message;  
+  document.getElementById(element).innerHTML=message; 
   errorCounter++;
   return errorCounter;
 }

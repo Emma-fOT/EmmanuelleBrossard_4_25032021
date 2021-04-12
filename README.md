@@ -1,5 +1,8 @@
-# Projet GameOn
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
-4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
+Openclassrooms Front-End Developer - Project 4 Project: Game On
+
+Result: https://emma-fot.github.io/EmmanuelleBrossard_4_25032021/
+
+Learnings:
+. write my first lines of js (mostly form validation)
+. still use no jquery, no bootstrap, no library
+. modify a project already created without to recode everything (even if it's not well coded...)
